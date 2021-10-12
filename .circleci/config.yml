@@ -15,7 +15,7 @@ jobs:
           command: stack setup
       - run:
           name: Build src and test dependencies
-          command: stack build --fast --test --bench --only-dependencies -j1
+          command: stack build --fast --test --bench --only-dependencies -j2
       - save_cache:
           key: stack-dependencies-{{ arch }}-{{ checksum "stack.yaml" }}-{{ checksum "fcm-client.cabal" }}
           paths:
